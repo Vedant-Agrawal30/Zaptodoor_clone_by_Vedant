@@ -1,0 +1,740 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Zaptodoor</title>
+
+  <!-- Favicons -->
+  <link href="upload/file_6943bf4d50c1f6.89796043.png" rel="icon">
+  <link href="upload/apple-touch.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/" rel="preconnect">
+  <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto&amp;family=Poppins&amp;family=Raleway&amp;display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="assets/css/footer.html" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- NAV MENU HOVER UNDERLINE + FIXED HEADER -->
+  <header id="header" class="header">
+    <div class="branding d-flex align-items-center">
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="upload/Zaptodoor Logo.png" alt="Zaptodoor Logo" class="site-logo"
+            style="max-height:45px;">
+        </a>
+
+        <!-- ✅ HAMBURGER -->
+        <i class="mobile-nav-toggle bi bi-list"></i>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li class="active " id="ved"><a href="index.html">Home</a></li>
+            <li class="active " id="ved"><a href="about-us.html">About</a></li>
+            <li class="active " id="ved"><a href="services.html">Services</a></li>
+            <li class="active " id="ved"><a href="press-release.html">Press Release</a></li>
+            <li class="active " id="ved"><a href="contact-us.html">Contact</a></li>
+
+            <li class="active " id="ved">
+              <a href="#" class="download-btn" id="download-btn-fixed">
+                Download
+                <img src="upload/file_694421c34e91f1.94199193.svg"
+                  style="height:16px;margin-left:8px;filter:brightness(0) invert(1);">
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </header>
+
+  <style>
+    /* ================= HEADER ================= */
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #ffffff;
+      z-index: 9999;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    body {
+      padding-top: 90px;
+    }
+
+    #header .container {
+      position: relative;
+    }
+
+    body.dark-mode #header {
+      background: #1a1a1a;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    body.dark-mode {
+      background: #121212;
+      color: #f0f0f0;
+    }
+
+    /* ================= DESKTOP NAV ================= */
+
+
+
+    .navmenu ul {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navmenu ul li a {
+      position: relative;
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+      padding-bottom: 8px;
+    }
+
+    body.dark-mode .navmenu ul li a {
+      color: #f0f0f0;
+    }
+
+
+    /* underline */
+    .navmenu ul li a::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: #4c0996;
+      transform: translateX(-50%);
+      transition: width 0.25s ease-in-out;
+    }
+
+    body.dark-mode .navmenu ul li a::after {
+      background-color: #8a4fff;
+    }
+
+    .navmenu ul li a:hover::after {
+      width: 100%;
+    }
+
+
+    /* Dark Mode Toggle Button */
+    .dark-mode-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #f0f0f0;
+      border: none;
+      cursor: pointer;
+      margin-left: 15px;
+      transition: all 0.3s ease;
+      font-size: 18px;
+      color: #333;
+    }
+
+    body.dark-mode .dark-mode-toggle {
+      background: #333;
+      color: #f0f0f0;
+    }
+
+    .dark-mode-toggle:hover {
+      transform: scale(1.1);
+      background: #4c0996;
+      color: white;
+    }
+
+    body.dark-mode .dark-mode-toggle:hover {
+      background: #8a4fff;
+    }
+
+
+    /* download button */
+    .download-btn {
+      margin-left: 40px;
+      background: #4c0996;
+      color: #fff !important;
+      padding: 10px 24px;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    /* HOVER / ACTIVE */
+    .navmenu ul li a:hover::after,
+    .navmenu ul li a.active::after {
+      width: 60%;
+    }
+
+    .download-btn::after {
+      display: none;
+    }
+
+    /* ================= HAMBURGER ================= */
+    .mobile-nav-toggle {
+      display: none;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 28px;
+      color: #4c0996;
+      cursor: pointer;
+      z-index: 10001;
+    }
+
+    #download-btn-fixed {
+      padding: 9px;
+    }
+
+    /* ================= MOBILE ================= */
+    @media (max-width: 991px) {
+
+      /* Mobile menu text hamesha dark rahega, dark mode mein bhi */
+      body.dark-mode .navmenu ul li a {
+        color: #333333 !important;
+      }
+
+      /* Mobile menu background hamesha white rahega */
+      body.dark-mode .navmenu.active {
+        background: #ffffff !important;
+      }
+
+      /* Mobile toggle button color fix */
+      body.dark-mode .mobile-nav-toggle {
+        color: #333333 !important;
+      }
+
+      /* Active link underline color fix */
+      body.dark-mode .navmenu ul li a::after {
+        background-color: #4c0996 !important;
+      }
+
+      /* Active link text color fix */
+      body.dark-mode .navmenu ul li.active a {
+        color: #4c0996 !important;
+      }
+
+      /* Dark mode download button fix */
+      body.dark-mode .navmenu ul li a.download-btn {
+        color: #ffffff !important;
+      }
+
+      .navmenu {
+        padding: 22px 18px;
+        /* 👈 top padding increase */
+      }
+
+      .navmenu.active {
+        display: block;
+      }
+
+      .navmenu ul {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin: 10px;
+        padding: 0px;
+        margin-bottom: 200px;
+      }
+
+      .navmenu ul li {
+        text-align: left;
+      }
+
+      .navmenu ul li a {
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      /* 🔥 Download button fix */
+      .download-btn {
+        margin-top: 10px;
+        padding: 10px 24px;
+        border-radius: 999px;
+        width: fit-content;
+        margin-left: 10px;
+      }
+
+      /* underline remove */
+      @media (max-width: 991px) {
+
+        /* underline base (hidden by default) */
+        .navmenu ul li a::after {
+          display: block;
+          width: 0;
+        }
+
+        /* 👈 ONLY ACTIVE LINK */
+        .navmenu ul li a.active::after {
+          width: 40%;
+          /* mobile ke liye perfect */
+          height: 2px;
+        }
+
+        #ved {
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+      }
+
+    }
+
+    @media (max-width: 991px) {
+
+      .mobile-nav-toggle {
+        display: block !important;
+        /* 🔥 THIS WAS MISSING */
+      }
+
+    }
+
+    /* REMOVE BACKGROUND OVERLAY / SHADOW */
+    body::before,
+    .header::before,
+    .mobile-nav-active::before {
+      display: none !important;
+      opacity: 0 !important;
+      background: transparent !important;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join Us Widgets</title>
+  <style>
+    /* Join Us Section Styling */
+    .join-us {
+      display: flex;
+      justify-content: space-around;
+      padding: 30px 0;
+      background-color: rgb(247, 241, 235);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap;
+      /* Responsive on smaller screens */
+    }
+
+    .joinus_heading {
+      display: grid;
+      place-items: center;
+      padding: 0.5rem;
+      background-color: rgb(247, 241, 235);
+    }
+
+    .joinus_heading p {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 0 auto;
+    }
+
+    .joinus_heading p span {
+      color: #ff914c;
+    }
+
+    .widget {
+      width: 30%;
+      padding: 1rem;
+      /* background-color:rgb(235, 227, 227); */
+      background-color: rgb(255, 255, 255);
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      margin-bottom: 30px;
+      /* Space between rows */
+      text-align: center;
+    }
+
+    .widget-image {
+      width: 100%;
+      height: 200px;
+      object-fit: fill;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .widget h2 {
+      margin-top: 0;
+      font-weight: bold;
+      color: #4c0996;
+      font-size: 1.5rem;
+    }
+
+    .widget p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .widget:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Button Styling */
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #4c0996;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 18px;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #4c0996;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 576px) {
+      .widget {
+        width: 90%;
+      }
+    }
+
+    @media (min-width: 577px) and (max-width: 768px) {
+      .widget {
+        width: 45%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Join Us Widgets Section -->
+  <div class="joinus_heading">
+    <p><span>Join</span> Us </p>
+  </div>
+
+  <section class="join-us">
+
+            <div class="widget">
+          <img src="upload/Franchise.webp" alt="Join us as a Franchise" class="widget-image" />
+          <h2>Join us as a Franchise</h2>
+          <p>Join Zaptodoor as a franchise partner, delivering convenience and reliability while growing your business in the booming delivery industry!</p>
+          <a href="join-franchise.html" class="btn">Join us as a Franchise</a>
+        </div>
+                <div class="widget">
+          <img src="upload/Delivery.webp" alt="Join us as a Delivery Person" class="widget-image" />
+          <h2>Join us as a Delivery Person</h2>
+          <p>Join Zaptodoor as a delivery partner and earn while delivering convenience with flexibility and growth opportunities!</p>
+          <a href="join-deliveryperson.html" class="btn">Join us as a Delivery Person</a>
+        </div>
+                <div class="widget">
+          <img src="upload/Sales.png" alt="Join us as a Sales Executive" class="widget-image" />
+          <h2>Join us as a Sales Executive</h2>
+          <p>Join Zaptodoor as a Sales Executive and drive growth by building valuable partnerships in the delivery industry!</p>
+          <a href="join-salesperson.html" class="btn">Join us as a Sales Executive</a>
+        </div>
+                <div class="widget">
+          <img src="upload/Restaurant.webp" alt="Join us as a Restaurant" class="widget-image" />
+          <h2>Join us as a Restaurant</h2>
+          <p>Partner with Zaptodoor to grow your restaurant’s customer base and deliver meals seamlessly. Expand your reach and boost your business today!</p>
+          <a href="join-resturant.html" class="btn">Join us as a Restaurant</a>
+        </div>
+                <div class="widget">
+          <img src="upload/Sales-Trainee.webp" alt="Join Us as a Sales Trainee!" class="widget-image" />
+          <h2>Join Us as a Sales Trainee!</h2>
+          <p>Kickstart your career with Zaptodoor! Gain hands-on experience in sales, develop customer interaction skills, and learn business strategies. Grow your expertise and step into a successful future!</p>
+          <a href="join-salestrainee.html" class="btn">Join Us as a Sales Trainee!</a>
+        </div>
+          </section>
+
+
+
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- …your existing head… -->
+  <style>
+    /* Footer base */
+    #footer {
+      background-color: #4c0996;
+      color: #fff;
+    }
+
+    #footer a {
+      color: #FFD600;
+      transition: color .2s;
+    }
+
+    #footer a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Logo / sitename */
+    #footer .sitename {
+      font-size: 1.75rem;
+      font-weight: bold;
+      color: #FFD600;
+    }
+
+    /* Section titles */
+    #footer h4 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #FFD600;
+      margin-bottom: 1rem;
+    }
+
+    /* Support list */
+    #footer .support-list li {
+      margin-bottom: .5rem;
+      color: #fff;
+    }
+
+    /* Social icons */
+    #footer .social-links a {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-right: .5rem;
+    }
+
+    #footer .social-links a:hover {
+      color: #FFD600;
+    }
+
+    /* Footer links */
+    #footer .footer-links ul li a {
+      display: block;
+      margin-bottom: .5rem;
+      color: #fff;
+    }
+
+    #footer .footer-links ul li a:hover {
+      color: #FFD600;
+    }
+
+    /* Contact */
+    #footer .footer-contact p,
+    #footer .footer-contact span {
+      color: #fff;
+    }
+
+    /* Certified logos heading */
+    .cert-title {
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 3rem;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    /* Certificates container */
+    .certificates {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    /* Each logo card */
+    .certificates img {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 12px;
+      max-width: 100px;
+      max-height: 100px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform .2s;
+    }
+
+    .certificates img:hover {
+      transform: translateY(-4px);
+    }
+
+    /* Copyright bar */
+    .footer-bottom {
+      background-color: rgba(255, 255, 255, 0.1);
+      text-align: center;
+      padding: 1.5rem 0;
+      margin-top: 2rem;
+      color: #fff;
+      position: relative;
+    }
+
+    .footer-bottom .copyright-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .footer-bottom .copyright-year {
+      color: #FFD600;
+      font-weight: 600;
+    }
+
+    .footer-bottom .company-name {
+      color: #FFD600;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <footer id="footer" class="footer">
+    <div class="container footer-top py-5">
+      <div class="row gy-4">
+        <!-- About & Support -->
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center mb-3">
+            <span class="sitename">ZAPTODOOR</span>
+          </a>
+          <ul class="support-list list-unstyled mb-3">
+            <li>Customer Support & Vendor Support</li>
+            <li>IVR: +91 83700 83744</li>
+            <li>Phone: +91 9200018690</li>
+            <li>Email: info@zaptodoor.com</li>
+          </ul>
+          <div class="social-links d-flex">
+            <a href="#https://www.facebook.com/profile.php?id=61570458010555" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#https://www.instagram.com/zaptodoor" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/zaptodoor-pvt-ltd/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            <a href="#https://www.youtube.com/@zaptodoor" class="youtube"><i class="bi bi-youtube"></i></a>
+            <a href="9200018690.html" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
+            <a href="#https://x.com/zap_to_door" class="twitter"><i class="bi bi-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Useful Links -->
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="our-certifications.html">Our Certifications</a></li>
+          </ul>
+        </div>
+
+        <!-- Important Links -->
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Important Links</h4>
+          <ul class="list-unstyled">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="cancellation-policy.html">Cancellation Policy</a></li>
+            <li><a href="terms-condition.html">Terms & Conditions</a></li>
+            <li><a href="shipping-policy.html">Shipping Policy</a></li>
+            <li><a href="refund-policy.html">Refund Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Us -->
+        <div class="col-lg-3 col-md-12 footer-contact">
+          <h4>Contact Us</h4>
+          <p>Gwalior Smart city incubation center, Moti Mahal, Lashkar, Gwalior, Madhya Pradesh 474007</p>
+        </div>
+      </div>
+
+      <!-- Certified Logos -->
+      <h5 class="cert-title">
+        Certified Quality &<br>
+        Government Recognized Partnerships
+      </h5>
+      <div class="certificates">
+                              <img src="upload/file_6943cc4977abe7.93552575.png"
+              alt="DPIIT">
+                      <img src="upload/685523ab8cc81.png"
+              alt="Gincube">
+                      <img src="upload/685523ab8cb77.png"
+              alt="FSSAI">
+                      <img src="upload/685523ab8ceb2.png"
+              alt="GST">
+                      <img src="upload/685523ab8d0d3.png"
+              alt="Smart City">
+                      <img src="upload/68552540dd938.png"
+              alt="MSME">
+                      <img src="upload/685523ab8d2d7.png"
+              alt="ISO">
+                  
+      </div>
+    </div>
+
+    <!-- Copyright Bar -->
+    <div class="footer-bottom">
+      <div class="copyright-content">
+        <p>© <span class="copyright-year">2025</span> <span class="company-name">Zaptodoor</span> All Rights Reserved</p>
+        <p style="font-size: 0.9rem; opacity: 0.8;">Made with ❤️ for Better Food Delivery Experience</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html></body>
+
+</html>
